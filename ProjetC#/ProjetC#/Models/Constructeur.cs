@@ -1,6 +1,13 @@
-﻿namespace ProjetC_.Models
+﻿
+using System;
+namespace ProjetC
 {
     public class Constructeur
+
     {
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("helloworld");
+        }
     }
 }

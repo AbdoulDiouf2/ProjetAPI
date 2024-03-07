@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Abdoul Ahad M Diouf\\Desktop\\ESIGELEC 2A\\SEMESTRE S8\\Developpement C# et Cloud Azure\\Cloud\\ProjetAPI\\ProjetC#\\ProjetC#\\ProjetC#.csproj": {}
+    "C:\\Users\\cheik\\OneDrive\\Bureau\\projetapi\\ProjetAPI\\ProjetC#\\ProjetC#\\ProjetC#.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Abdoul Ahad M Diouf\\Desktop\\ESIGELEC 2A\\SEMESTRE S8\\Developpement C# et Cloud Azure\\Cloud\\ProjetAPI\\ProjetC#\\ProjetC#\\ProjetC#.csproj": {
+    "C:\\Users\\cheik\\OneDrive\\Bureau\\projetapi\\ProjetAPI\\ProjetC#\\ProjetC#\\ProjetC#.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Abdoul Ahad M Diouf\\Desktop\\ESIGELEC 2A\\SEMESTRE S8\\Developpement C# et Cloud Azure\\Cloud\\ProjetAPI\\ProjetC#\\ProjetC#\\ProjetC#.csproj",
+        "projectUniqueName": "C:\\Users\\cheik\\OneDrive\\Bureau\\projetapi\\ProjetAPI\\ProjetC#\\ProjetC#\\ProjetC#.csproj",
         "projectName": "ProjetC#",
-        "projectPath": "C:\\Users\\Abdoul Ahad M Diouf\\Desktop\\ESIGELEC 2A\\SEMESTRE S8\\Developpement C# et Cloud Azure\\Cloud\\ProjetAPI\\ProjetC#\\ProjetC#\\ProjetC#.csproj",
-        "packagesPath": "C:\\Users\\Abdoul Ahad M Diouf\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Abdoul Ahad M Diouf\\Desktop\\ESIGELEC 2A\\SEMESTRE S8\\Developpement C# et Cloud Azure\\Cloud\\ProjetAPI\\ProjetC#\\ProjetC#\\obj\\",
+        "projectPath": "C:\\Users\\cheik\\OneDrive\\Bureau\\projetapi\\ProjetAPI\\ProjetC#\\ProjetC#\\ProjetC#.csproj",
+        "packagesPath": "C:\\Users\\cheik\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cheik\\OneDrive\\Bureau\\projetapi\\ProjetAPI\\ProjetC#\\ProjetC#\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Abdoul Ahad M Diouf\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\cheik\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,6 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -64,7 +69,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

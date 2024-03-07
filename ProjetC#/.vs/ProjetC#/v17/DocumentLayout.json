@@ -1,0 +1,57 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\cheik\\OneDrive\\Bureau\\projetapi\\ProjetAPI\\ProjetC#\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{27F0CE58-B582-4530-8F9F-6BB544624B4D}|ProjetC#\\ProjetC#.csproj|c:\\users\\cheik\\onedrive\\bureau\\projetapi\\projetapi\\projetc#\\projetc#\\models\\constructeur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27F0CE58-B582-4530-8F9F-6BB544624B4D}|ProjetC#\\ProjetC#.csproj|solutionrelative:projetc#\\models\\constructeur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27F0CE58-B582-4530-8F9F-6BB544624B4D}|ProjetC#\\ProjetC#.csproj|c:\\users\\cheik\\onedrive\\bureau\\projetapi\\projetapi\\projetc#\\projetc#\\models\\console.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27F0CE58-B582-4530-8F9F-6BB544624B4D}|ProjetC#\\ProjetC#.csproj|solutionrelative:projetc#\\models\\console.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Constructeur.cs",
+              "DocumentMoniker": "C:\\Users\\cheik\\OneDrive\\Bureau\\projetapi\\ProjetAPI\\ProjetC#\\ProjetC#\\Models\\Constructeur.cs",
+              "RelativeDocumentMoniker": "ProjetC#\\Models\\Constructeur.cs",
+              "ToolTip": "C:\\Users\\cheik\\OneDrive\\Bureau\\projetapi\\ProjetAPI\\ProjetC#\\ProjetC#\\Models\\Constructeur.cs",
+              "RelativeToolTip": "ProjetC#\\Models\\Constructeur.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-07T16:13:34.311Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Console.cs",
+              "DocumentMoniker": "C:\\Users\\cheik\\OneDrive\\Bureau\\projetapi\\ProjetAPI\\ProjetC#\\ProjetC#\\Models\\Console.cs",
+              "RelativeDocumentMoniker": "ProjetC#\\Models\\Console.cs",
+              "ToolTip": "C:\\Users\\cheik\\OneDrive\\Bureau\\projetapi\\ProjetAPI\\ProjetC#\\ProjetC#\\Models\\Console.cs",
+              "RelativeToolTip": "ProjetC#\\Models\\Console.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-07T16:13:34.321Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
