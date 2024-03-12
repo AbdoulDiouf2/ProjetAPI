@@ -7,12 +7,10 @@ namespace ProjetCSharp.Models
         public string Const { get; set; }
         public string Name { get; set; }
 
-    public Consoles(int id,string Constr, string name) {
-        this.Id = id;
-        this.Const = Constr;
-        this.Name = name;
-    }
-
-
+        public Consoles(int id,string Constr, string name) {
+            this.Id = id;
+            this.Const = Constr;
+            this.Name = name;
+        }
     }
 }
