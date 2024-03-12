@@ -15,5 +15,6 @@ namespace ProjetCSharp.Data
         }
 
         public DbSet<ProjetCSharp.Models.NombreVentes> NombreVentes { get; set; } = default!;
+        public DbSet<ProjetCSharp.Models.Consoles> Consoles { get; set; } = default!;
     }
 }
