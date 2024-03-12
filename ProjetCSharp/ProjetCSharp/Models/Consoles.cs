@@ -11,11 +11,7 @@ namespace ProjetCSharp.Models
         this.Id = id;
         this.Const = Constr;
         this.Name = name;
-
-
-        
-        
-        }
+    }
 
 
     }
