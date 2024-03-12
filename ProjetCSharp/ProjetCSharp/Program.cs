@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using ProjetCSharp.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<ProjetCSharpContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ProjetCSharpContext") ?? throw new InvalidOperationException("Connection string 'ProjetCSharpContext' not found.")));
 
 // Add services to the container.
 
