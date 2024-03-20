@@ -2,28 +2,29 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ClientProjet.API;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using ProjetCSharp.Data;
-using ProjetCSharp.Models;
+
+using ClientProjet.API;
 
 namespace ClientProjet.Pages.MesConsoles
 {
     public class IndexModel : PageModel
     {
-        private readonly ProjetCSharp.Data.ProjetCSharpContext _context;
+        private readonly IConsolesClient _client;
 
-        public IndexModel(ProjetCSharp.Data.ProjetCSharpContext context)
+        public IndexModel(IConsolesClient client)
         {
-            _context = context;
+            _client = client;
         }
 
         public IList<Consoles> Consoles { get;set; } = default!;
 
         public async Task OnGetAsync()
         {
-            Consoles = await _context.Consoles.ToListAsync();
+            Consoles = await _client.Consoles.ToListAsync();
         }
     }
 }

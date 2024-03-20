@@ -2,21 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ClientProjet.API;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using ProjetCSharp.Data;
-using ProjetCSharp.Models;
+
+using ClientProjet.API;
 
 namespace ClientProjet.Pages.MesConsoles
 {
     public class DetailsModel : PageModel
     {
-        private readonly ProjetCSharp.Data.ProjetCSharpContext _context;
+        private readonly IConsolesClient _client;
 
-        public DetailsModel(ProjetCSharp.Data.ProjetCSharpContext context)
+        public DetailsModel(IConsolesClient client)
         {
-            _context = context;
+            _client = client;
         }
 
         public Consoles Consoles { get; set; } = default!;
@@ -28,7 +29,7 @@ namespace ClientProjet.Pages.MesConsoles
                 return NotFound();
             }
 
-            var consoles = await _context.Consoles.FirstOrDefaultAsync(m => m.Id == id);
+            var consoles = await _client.Consoles.FirstOrDefaultAsync(m => m.Id == id);
             if (consoles == null)
             {
                 return NotFound();

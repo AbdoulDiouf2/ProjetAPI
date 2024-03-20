@@ -5,18 +5,18 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using ProjetCSharp.Data;
-using ProjetCSharp.Models;
+
+using ClientProjet.API;
 
 namespace ClientProjet.Pages.MesConsoles
 {
     public class DeleteModel : PageModel
     {
-        private readonly ProjetCSharp.Data.ProjetCSharpContext _context;
+        private readonly IConsolesClient _client;
 
-        public DeleteModel(ProjetCSharp.Data.ProjetCSharpContext context)
+        public DeleteModel(IConsolesClient client)
         {
-            _context = context;
+            _client = client;
         }
 
         [BindProperty]
@@ -29,7 +29,7 @@ namespace ClientProjet.Pages.MesConsoles
                 return NotFound();
             }
 
-            var consoles = await _context.Consoles.FirstOrDefaultAsync(m => m.Id == id);
+            var consoles = await _client.Consoles.FirstOrDefaultAsync(m => m.Id == id);
 
             if (consoles == null)
             {
@@ -49,12 +49,12 @@ namespace ClientProjet.Pages.MesConsoles
                 return NotFound();
             }
 
-            var consoles = await _context.Consoles.FindAsync(id);
+            var consoles = await _client.Consoles.FindAsync(id);
             if (consoles != null)
             {
                 Consoles = consoles;
-                _context.Consoles.Remove(Consoles);
-                await _context.SaveChangesAsync();
+                _client.Consoles.Remove(Consoles);
+                await _client.SaveChangesAsync();
             }
 
             return RedirectToPage("./Index");

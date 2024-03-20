@@ -6,18 +6,18 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using ProjetCSharp.Data;
-using ProjetCSharp.Models;
+
+using ClientProjet.API;
 
 namespace ClientProjet.Pages.NombreDeVente
 {
     public class EditModel : PageModel
     {
-        private readonly ProjetCSharp.Data.ProjetCSharpContext _context;
+        private readonly IConsolesClient _client;
 
-        public EditModel(ProjetCSharp.Data.ProjetCSharpContext context)
+        public EditModel(IConsolesClient client)
         {
-            _context = context;
+            _client = client;
         }
 
         [BindProperty]
@@ -30,7 +30,7 @@ namespace ClientProjet.Pages.NombreDeVente
                 return NotFound();
             }
 
-            var nombreventes =  await _context.NombreVentes.FirstOrDefaultAsync(m => m.Id == id);
+            var nombreventes =  await _client.NombreVentes.FirstOrDefaultAsync(m => m.Id == id);
             if (nombreventes == null)
             {
                 return NotFound();
@@ -48,11 +48,11 @@ namespace ClientProjet.Pages.NombreDeVente
                 return Page();
             }
 
-            _context.Attach(NombreVentes).State = EntityState.Modified;
+            _client.Attach(NombreVentes).State = EntityState.Modified;
 
             try
             {
-                await _context.SaveChangesAsync();
+                await _client.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {

@@ -2,28 +2,29 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ClientProjet.API;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using ProjetCSharp.Data;
-using ProjetCSharp.Models;
+
+using ClientProjet.API;
 
 namespace ClientProjet.Pages.NombreDeVente
 {
     public class IndexModel : PageModel
     {
-        private readonly ProjetCSharp.Data.ProjetCSharpContext _context;
+        private readonly IConsolesClient _client;
 
-        public IndexModel(ProjetCSharp.Data.ProjetCSharpContext context)
+        public IndexModel(IConsolesClient client)
         {
-            _context = context;
+            _client = client;
         }
 
         public IList<NombreVentes> NombreVentes { get;set; } = default!;
 
         public async Task OnGetAsync()
         {
-            NombreVentes = await _context.NombreVentes.ToListAsync();
+            NombreVentes = await _client.NombreVentes.ToListAsync();
         }
     }
 }

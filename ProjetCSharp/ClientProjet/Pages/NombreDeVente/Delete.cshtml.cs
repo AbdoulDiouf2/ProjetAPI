@@ -2,21 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ClientProjet.API;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using ProjetCSharp.Data;
-using ProjetCSharp.Models;
+
+using ClientProjet.API;
 
 namespace ClientProjet.Pages.NombreDeVente
 {
     public class DeleteModel : PageModel
     {
-        private readonly ProjetCSharp.Data.ProjetCSharpContext _context;
+        private readonly IConsolesClient _client;
 
-        public DeleteModel(ProjetCSharp.Data.ProjetCSharpContext context)
+        public DeleteModel(IConsolesClient client)
         {
-            _context = context;
+            _client = client;
         }
 
         [BindProperty]
@@ -29,7 +30,7 @@ namespace ClientProjet.Pages.NombreDeVente
                 return NotFound();
             }
 
-            var nombreventes = await _context.NombreVentes.FirstOrDefaultAsync(m => m.Id == id);
+            var nombreventes = await _client.NombreVentes.FirstOrDefaultAsync(m => m.Id == id);
 
             if (nombreventes == null)
             {
@@ -49,12 +50,12 @@ namespace ClientProjet.Pages.NombreDeVente
                 return NotFound();
             }
 
-            var nombreventes = await _context.NombreVentes.FindAsync(id);
+            var nombreventes = await _client.NombreVentes.FindAsync(id);
             if (nombreventes != null)
             {
                 NombreVentes = nombreventes;
-                _context.NombreVentes.Remove(NombreVentes);
-                await _context.SaveChangesAsync();
+                _client.NombreVentes.Remove(NombreVentes);
+                await _client.SaveChangesAsync();
             }
 
             return RedirectToPage("./Index");

@@ -2,22 +2,23 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ClientProjet.API;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using ProjetCSharp.Data;
-using ProjetCSharp.Models;
+
+using ClientProjet.API;
 
 namespace ClientProjet.Pages.MesConsoles
 {
     public class EditModel : PageModel
     {
-        private readonly ProjetCSharp.Data.ProjetCSharpContext _context;
+        private readonly IConsolesClient _client;
 
-        public EditModel(ProjetCSharp.Data.ProjetCSharpContext context)
+        public EditModel(IConsolesClient client)
         {
-            _context = context;
+            _client = client;
         }
 
         [BindProperty]
@@ -30,7 +31,7 @@ namespace ClientProjet.Pages.MesConsoles
                 return NotFound();
             }
 
-            var consoles =  await _context.Consoles.FirstOrDefaultAsync(m => m.Id == id);
+            var consoles =  await _client.Consoles.FirstOrDefaultAsync(m => m.Id == id);
             if (consoles == null)
             {
                 return NotFound();
@@ -48,11 +49,11 @@ namespace ClientProjet.Pages.MesConsoles
                 return Page();
             }
 
-            _context.Attach(Consoles).State = EntityState.Modified;
+            _client.Attach(Consoles).State = EntityState.Modified;
 
             try
             {
-                await _context.SaveChangesAsync();
+                await _client.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -71,7 +72,7 @@ namespace ClientProjet.Pages.MesConsoles
 
         private bool ConsolesExists(int id)
         {
-            return _context.Consoles.Any(e => e.Id == id);
+            return _client.Consoles.Any(e => e.Id == id);
         }
     }
 }

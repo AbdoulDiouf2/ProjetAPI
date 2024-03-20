@@ -5,18 +5,19 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using ProjetCSharp.Data;
-using ProjetCSharp.Models;
+
+using ClientProjet.API;
 
 namespace ClientProjet.Pages.MesConsoles
 {
     public class CreateModel : PageModel
     {
-        private readonly ProjetCSharp.Data.ProjetCSharpContext _context;
+        private readonly IConsolesClient _client;
 
-        public CreateModel(ProjetCSharp.Data.ProjetCSharpContext context)
+
+        public CreateModel(IConsolesClient client)
         {
-            _context = context;
+            _client = client;
         }
 
         public IActionResult OnGet()
@@ -35,8 +36,8 @@ namespace ClientProjet.Pages.MesConsoles
                 return Page();
             }
 
-            _context.Consoles.Add(Consoles);
-            await _context.SaveChangesAsync();
+            _client.Consoles.Add(Consoles);
+            await _client.SaveChangesAsync();
 
             return RedirectToPage("./Index");
         }
