@@ -30,15 +30,11 @@ namespace ClientProjet.Pages.NombreDeVente
                 return NotFound();
             }
 
-            var nombreventes = await _client.NombreVentes.FirstOrDefaultAsync(m => m.Id == id);
+            NombreVentes = await _client.NombreVentesGETAsync(id.Value);
 
-            if (nombreventes == null)
+            if (NombreVentes == null)
             {
                 return NotFound();
-            }
-            else
-            {
-                NombreVentes = nombreventes;
             }
             return Page();
         }
@@ -50,14 +46,15 @@ namespace ClientProjet.Pages.NombreDeVente
                 return NotFound();
             }
 
-            var nombreventes = await _client.NombreVentes.FindAsync(id);
-            if (nombreventes != null)
+            try
             {
-                NombreVentes = nombreventes;
-                _client.NombreVentes.Remove(NombreVentes);
-                await _client.SaveChangesAsync();
-            }
+                await _client.NombreVentesDELETEAsync(id.Value);
 
+            }
+            catch (Exception ex)
+            {
+                return RedirectToPage("./Index");
+            }
             return RedirectToPage("./Index");
         }
     }

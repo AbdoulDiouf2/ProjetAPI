@@ -29,14 +29,10 @@ namespace ClientProjet.Pages.NombreDeVente
                 return NotFound();
             }
 
-            var nombreventes = await _client.NombreVentes.FirstOrDefaultAsync(m => m.Id == id);
-            if (nombreventes == null)
+            NombreVentes = await _client.NombreVentesGETAsync(id.Value);
+            if (NombreVentes == null)
             {
                 return NotFound();
-            }
-            else
-            {
-                NombreVentes = nombreventes;
             }
             return Page();
         }

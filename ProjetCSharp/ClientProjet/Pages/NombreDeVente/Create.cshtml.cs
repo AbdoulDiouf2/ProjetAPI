@@ -35,9 +35,14 @@ namespace ClientProjet.Pages.NombreDeVente
                 return Page();
             }
 
-            _client.NombreVentes.Add(NombreVentes);
-            await _client.SaveChangesAsync();
-
+            try
+            {
+                await _client.NombreVentesPOSTAsync(NombreVentes);
+            }
+            catch (Exception ex)
+            {
+                return RedirectToPage("./Index");
+            }
             return RedirectToPage("./Index");
         }
     }

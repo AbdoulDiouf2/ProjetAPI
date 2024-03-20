@@ -48,30 +48,22 @@ namespace ClientProjet.Pages.NombreDeVente
                 return Page();
             }
 
-            _client.Attach(NombreVentes).State = EntityState.Modified;
+            //_client.Attach(NombreVentes).State = EntityState.Modified;
 
             try
             {
-                await _client.SaveChangesAsync();
+                await _client.NombreVentesPUTAsync(NombreVentes.Id, NombreVentes);
             }
-            catch (DbUpdateConcurrencyException)
+            catch (Exception ex)
             {
-                if (!NombreVentesExists(NombreVentes.Id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                return RedirectToPage("./Index");
             }
-
             return RedirectToPage("./Index");
         }
-
+        /*
         private bool NombreVentesExists(int id)
         {
             return _context.NombreVentes.Any(e => e.Id == id);
-        }
+        }*/
     }
 }
