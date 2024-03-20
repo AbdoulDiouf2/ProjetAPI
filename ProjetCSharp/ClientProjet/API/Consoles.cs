@@ -128,16 +128,23 @@ namespace ClientProjet.API
     public partial class Consoles : IConsoles
     {
         #pragma warning disable 8618
-        private string _baseUrl;
+        private string _baseUrl="http://localhost:5255";
         #pragma warning restore 8618
 
         private System.Net.Http.HttpClient _httpClient;
         private static System.Lazy<Newtonsoft.Json.JsonSerializerSettings> _settings = new System.Lazy<Newtonsoft.Json.JsonSerializerSettings>(CreateSerializerSettings, true);
 
-        public Consoles(string baseUrl, System.Net.Http.HttpClient httpClient)
+        public Consoles( System.Net.Http.HttpClient httpClient)
         {
-            BaseUrl = baseUrl;
+            
             _httpClient = httpClient;
+            _settings = new System.Lazy<Newtonsoft.Json.JsonSerializerSettings>(() =>
+            {
+                var settings = new Newtonsoft.Json.JsonSerializerSettings();
+                UpdateJsonSerializerSettings(settings);
+                return settings;
+            }
+                );
         }
 
         private static Newtonsoft.Json.JsonSerializerSettings CreateSerializerSettings()
