@@ -78,6 +78,19 @@ namespace ProjetCSharp.Controllers
         [HttpPost]
         public async Task<ActionResult<NombreVentes>> PostNombreVentes(NombreVentes nombreVentes)
         {
+            if (nombreVentes.consId == null)  // Utilisez consId au lieu de ConsoleId
+            {
+                return BadRequest("Console ID is required.");
+            }
+
+            var console = await _context.Consoles.FindAsync(nombreVentes.consId); // Utilisez consId au lieu de ConsoleId
+            if (console == null)
+            {
+                return NotFound("Console not found.");
+            }
+
+            nombreVentes.consId = console.Id; // Utilisez consId au lieu de ConsoleId
+
             _context.NombreVentes.Add(nombreVentes);
             await _context.SaveChangesAsync();
 
