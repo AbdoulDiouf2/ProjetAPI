@@ -134,9 +134,8 @@ namespace ClientProjet.API
         private System.Net.Http.HttpClient _httpClient;
         private static System.Lazy<Newtonsoft.Json.JsonSerializerSettings> _settings = new System.Lazy<Newtonsoft.Json.JsonSerializerSettings>(CreateSerializerSettings, true);
 
-        public ConsolesClient( System.Net.Http.HttpClient httpClient)
+        public ConsolesClient(System.Net.Http.HttpClient httpClient)
         {
-            
             _httpClient = httpClient;
             _settings = new System.Lazy<Newtonsoft.Json.JsonSerializerSettings>(() =>
             {
@@ -197,7 +196,7 @@ namespace ClientProjet.API
                     var urlBuilder_ = new System.Text.StringBuilder();
                     if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
                     // Operation Path: "api/Consoles"
-                    urlBuilder_.Append("api/Consoles");
+                    urlBuilder_.Append("/api/Consoles");
 
                     PrepareRequest(client_, request_, urlBuilder_);
 
