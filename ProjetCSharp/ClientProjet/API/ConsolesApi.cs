@@ -21,7 +21,7 @@ namespace ClientProjet.API
     using System = global::System;
 
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "14.0.3.0 (NJsonSchema v11.0.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial interface IConsoles
+    public partial interface IConsolesClient
     {
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
@@ -125,16 +125,16 @@ namespace ClientProjet.API
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "14.0.3.0 (NJsonSchema v11.0.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Consoles : IConsoles
+    public partial class ConsolesClient : IConsolesClient
     {
         #pragma warning disable 8618
-        private string _baseUrl="http://localhost:5255";
+        private string _baseUrl= "http://localhost:5096";
         #pragma warning restore 8618
 
         private System.Net.Http.HttpClient _httpClient;
         private static System.Lazy<Newtonsoft.Json.JsonSerializerSettings> _settings = new System.Lazy<Newtonsoft.Json.JsonSerializerSettings>(CreateSerializerSettings, true);
 
-        public Consoles( System.Net.Http.HttpClient httpClient)
+        public ConsolesClient( System.Net.Http.HttpClient httpClient)
         {
             
             _httpClient = httpClient;
@@ -143,8 +143,7 @@ namespace ClientProjet.API
                 var settings = new Newtonsoft.Json.JsonSerializerSettings();
                 UpdateJsonSerializerSettings(settings);
                 return settings;
-            }
-                );
+            });
         }
 
         private static Newtonsoft.Json.JsonSerializerSettings CreateSerializerSettings()
