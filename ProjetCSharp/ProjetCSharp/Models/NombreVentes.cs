@@ -8,8 +8,6 @@ namespace ProjetCSharp.Models
         public int Nbventes { get; set; }
         public int Annee { get; set; }
         public int? consId { get; set; }
-        // public Consoles cons {  get; set; }
-
         public override string ToString()
         {
             String display = "";
