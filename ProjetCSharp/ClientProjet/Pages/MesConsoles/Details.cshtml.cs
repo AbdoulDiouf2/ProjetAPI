@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-
 using ClientProjet.API;
 
 namespace ClientProjet.Pages.MesConsoles
@@ -29,7 +27,7 @@ namespace ClientProjet.Pages.MesConsoles
                 return NotFound();
             }
 
-            var consoles = await _client.Consoles.FirstOrDefaultAsync(m => m.Id == id);
+            var consoles = await _client.ConsolesGETAsync(id.Value);
             if (consoles == null)
             {
                 return NotFound();

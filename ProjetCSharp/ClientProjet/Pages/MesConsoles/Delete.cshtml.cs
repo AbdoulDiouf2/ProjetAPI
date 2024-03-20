@@ -29,7 +29,7 @@ namespace ClientProjet.Pages.MesConsoles
                 return NotFound();
             }
 
-            var consoles = await _client.Consoles.FirstOrDefaultAsync(m => m.Id == id);
+            var consoles = await _client.ConsolesGETAsync(id.Value);
 
             if (consoles == null)
             {
@@ -49,14 +49,14 @@ namespace ClientProjet.Pages.MesConsoles
                 return NotFound();
             }
 
-            var consoles = await _client.Consoles.FindAsync(id);
-            if (consoles != null)
+            try
             {
-                Consoles = consoles;
-                _client.Consoles.Remove(Consoles);
-                await _client.SaveChangesAsync();
+                await _client.ConsolesDELETEAsync(id.Value);
             }
-
+            catch (Exception ex)
+            {
+                return RedirectToPage("./Index");
+            }
             return RedirectToPage("./Index");
         }
     }

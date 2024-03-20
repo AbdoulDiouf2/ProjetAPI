@@ -24,7 +24,7 @@ namespace ClientProjet.Pages.MesConsoles
 
         public async Task OnGetAsync()
         {
-            Consoles = await _client.Consoles.ToListAsync();
+            Consoles = (await _client.ConsolesAllAsync()).ToList();
         }
     }
 }

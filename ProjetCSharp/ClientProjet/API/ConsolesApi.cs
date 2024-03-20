@@ -196,7 +196,7 @@ namespace ClientProjet.API
                     var urlBuilder_ = new System.Text.StringBuilder();
                     if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
                     // Operation Path: "api/Consoles"
-                    urlBuilder_.Append("/api/Consoles");
+                    urlBuilder_.Append("api/Consoles");
 
                     PrepareRequest(client_, request_, urlBuilder_);
 

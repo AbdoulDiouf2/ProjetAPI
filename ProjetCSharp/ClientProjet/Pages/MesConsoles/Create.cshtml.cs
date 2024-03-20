@@ -36,9 +36,14 @@ namespace ClientProjet.Pages.MesConsoles
                 return Page();
             }
 
-            _client.Consoles.Add(Consoles);
-            await _client.SaveChangesAsync();
-
+            try
+            {
+                await _client.ConsolesPOSTAsync(Consoles);
+            }
+            catch (Exception ex)
+            {
+                return RedirectToPage("./Index");
+            }
             return RedirectToPage("./Index");
         }
     }

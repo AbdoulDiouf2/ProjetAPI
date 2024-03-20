@@ -24,7 +24,8 @@ namespace ClientProjet.Pages.NombreDeVente
 
         public async Task OnGetAsync()
         {
-            NombreVentes = await _client.NombreVentes.ToListAsync();
+            NombreVentes = (await _client.NombreVentesAllAsync()).ToList();
         }
+
     }
 }

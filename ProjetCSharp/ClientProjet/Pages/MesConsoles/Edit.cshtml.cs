@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-
 using ClientProjet.API;
+using System.Net;
 
 namespace ClientProjet.Pages.MesConsoles
 {
@@ -31,7 +30,7 @@ namespace ClientProjet.Pages.MesConsoles
                 return NotFound();
             }
 
-            var consoles =  await _client.Consoles.FirstOrDefaultAsync(m => m.Id == id);
+            var consoles =  await _client.ConsolesGETAsync(id.Value);
             if (consoles == null)
             {
                 return NotFound();
@@ -49,30 +48,19 @@ namespace ClientProjet.Pages.MesConsoles
                 return Page();
             }
 
-            _client.Attach(Consoles).State = EntityState.Modified;
+            //_client.Attach(Consoles).State = EntityState.Modified;
 
             try
             {
-                await _client.SaveChangesAsync();
+                await _client.ConsolesPUTAsync(Consoles.Id, Consoles);
             }
-            catch (DbUpdateConcurrencyException)
+            catch (Exception ex)
             {
-                if (!ConsolesExists(Consoles.Id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                return RedirectToPage("./Index");
             }
-
             return RedirectToPage("./Index");
         }
 
-        private bool ConsolesExists(int id)
-        {
-            return _client.Consoles.Any(e => e.Id == id);
-        }
+        
     }
 }
