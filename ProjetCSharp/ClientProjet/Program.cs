@@ -1,6 +1,15 @@
+using ClientProjet.API;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddRazorPages().AddNewtonsoftJson();
+
+builder.Services.AddHttpClient<IConsolesClient, ConsolesClient>(client => 
+            client.BaseAddress= new Uri(builder.Configuration.GetSection("ConsolesApi").Value));
+
+
 builder.Services.AddRazorPages();
 
 var app = builder.Build();
