@@ -4,4 +4,4 @@ TRINÔME :
 - Abdoul Ahad Mbacké DIOUF 
 - Aminata SOW
 
-LIEN DU SITE: https://clientprojet20240321150115.azurewebsites.net
+LIEN DU SITE: https://projetcsharp20240321155138.azurewebsites.net
