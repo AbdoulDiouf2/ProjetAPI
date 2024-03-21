@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "apis1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ApiManagement/service/ProjetCSharpapi5/apis/ProjetCSharp",
+      "type": "apis.azure"
+    },
+    "mssql4": {
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Web/sites/ProjetCSharp20240321174127/providers/Microsoft.ServiceLinker/linkers/ConnectionStringsProjetCSharpContext2_7692519E63",
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/projetcsharpdbserver6/databases/ProjetCSharp_db6",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:ProjetCSharpContext2"
+    }
+  }
+}

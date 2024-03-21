@@ -3,6 +3,21 @@
     "mssql1": {
       "type": "mssql",
       "connectionId": "ConnectionStrings:ProjetCSharpContext"
+    },
+    "mssql2": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:DefaultConnection"
+    },
+    "mssql3": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:ProjetCSharpContext1"
+    },
+    "apis1": {
+      "type": "apis"
+    },
+    "mssql4": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:ProjetCSharpContext2"
     }
   }
 }
