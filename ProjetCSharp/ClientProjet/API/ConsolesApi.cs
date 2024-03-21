@@ -128,11 +128,11 @@ namespace ClientProjet.API
     public partial class ConsolesClient : IConsolesClient
     {
         #pragma warning disable 8618
-        private string _baseUrl= "http://localhost:5096";
+        private string _baseUrl= "http://localhost:5255";
         #pragma warning restore 8618
 
         private System.Net.Http.HttpClient _httpClient;
-        private static System.Lazy<Newtonsoft.Json.JsonSerializerSettings> _settings = new System.Lazy<Newtonsoft.Json.JsonSerializerSettings>(CreateSerializerSettings, true);
+        private static System.Lazy<Newtonsoft.Json.JsonSerializerSettings> _settings;
 
         public ConsolesClient(System.Net.Http.HttpClient httpClient)
         {
@@ -196,7 +196,7 @@ namespace ClientProjet.API
                     var urlBuilder_ = new System.Text.StringBuilder();
                     if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
                     // Operation Path: "api/Consoles"
-                    urlBuilder_.Append("api/Consoles");
+                    urlBuilder_.Append("/api/Consoles");
 
                     PrepareRequest(client_, request_, urlBuilder_);
 
@@ -278,7 +278,7 @@ namespace ClientProjet.API
                     var urlBuilder_ = new System.Text.StringBuilder();
                     if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
                     // Operation Path: "api/Consoles"
-                    urlBuilder_.Append("api/Consoles");
+                    urlBuilder_.Append("/api/Consoles");
 
                     PrepareRequest(client_, request_, urlBuilder_);
 
@@ -359,7 +359,7 @@ namespace ClientProjet.API
                     var urlBuilder_ = new System.Text.StringBuilder();
                     if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
                     // Operation Path: "api/Consoles/{id}"
-                    urlBuilder_.Append("api/Consoles/");
+                    urlBuilder_.Append("/api/Consoles/");
                     urlBuilder_.Append(System.Uri.EscapeDataString(ConvertToString(id, System.Globalization.CultureInfo.InvariantCulture)));
 
                     PrepareRequest(client_, request_, urlBuilder_);
@@ -444,7 +444,7 @@ namespace ClientProjet.API
                     var urlBuilder_ = new System.Text.StringBuilder();
                     if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
                     // Operation Path: "api/Consoles/{id}"
-                    urlBuilder_.Append("api/Consoles/");
+                    urlBuilder_.Append("/api/Consoles/");
                     urlBuilder_.Append(System.Uri.EscapeDataString(ConvertToString(id, System.Globalization.CultureInfo.InvariantCulture)));
 
                     PrepareRequest(client_, request_, urlBuilder_);
@@ -520,7 +520,7 @@ namespace ClientProjet.API
                     var urlBuilder_ = new System.Text.StringBuilder();
                     if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
                     // Operation Path: "api/Consoles/{id}"
-                    urlBuilder_.Append("api/Consoles/");
+                    urlBuilder_.Append("/api/Consoles/");
                     urlBuilder_.Append(System.Uri.EscapeDataString(ConvertToString(id, System.Globalization.CultureInfo.InvariantCulture)));
 
                     PrepareRequest(client_, request_, urlBuilder_);
@@ -594,7 +594,7 @@ namespace ClientProjet.API
                     var urlBuilder_ = new System.Text.StringBuilder();
                     if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
                     // Operation Path: "api/NombreVentes"
-                    urlBuilder_.Append("api/NombreVentes");
+                    urlBuilder_.Append("/api/NombreVentes");
 
                     PrepareRequest(client_, request_, urlBuilder_);
 
@@ -676,7 +676,7 @@ namespace ClientProjet.API
                     var urlBuilder_ = new System.Text.StringBuilder();
                     if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
                     // Operation Path: "api/NombreVentes"
-                    urlBuilder_.Append("api/NombreVentes");
+                    urlBuilder_.Append("/api/NombreVentes");
 
                     PrepareRequest(client_, request_, urlBuilder_);
 
@@ -757,7 +757,7 @@ namespace ClientProjet.API
                     var urlBuilder_ = new System.Text.StringBuilder();
                     if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
                     // Operation Path: "api/NombreVentes/{id}"
-                    urlBuilder_.Append("api/NombreVentes/");
+                    urlBuilder_.Append("/api/NombreVentes/");
                     urlBuilder_.Append(System.Uri.EscapeDataString(ConvertToString(id, System.Globalization.CultureInfo.InvariantCulture)));
 
                     PrepareRequest(client_, request_, urlBuilder_);
@@ -842,7 +842,7 @@ namespace ClientProjet.API
                     var urlBuilder_ = new System.Text.StringBuilder();
                     if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
                     // Operation Path: "api/NombreVentes/{id}"
-                    urlBuilder_.Append("api/NombreVentes/");
+                    urlBuilder_.Append("/api/NombreVentes/");
                     urlBuilder_.Append(System.Uri.EscapeDataString(ConvertToString(id, System.Globalization.CultureInfo.InvariantCulture)));
 
                     PrepareRequest(client_, request_, urlBuilder_);
@@ -918,7 +918,7 @@ namespace ClientProjet.API
                     var urlBuilder_ = new System.Text.StringBuilder();
                     if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
                     // Operation Path: "api/NombreVentes/{id}"
-                    urlBuilder_.Append("api/NombreVentes/");
+                    urlBuilder_.Append("/api/NombreVentes/");
                     urlBuilder_.Append(System.Uri.EscapeDataString(ConvertToString(id, System.Globalization.CultureInfo.InvariantCulture)));
 
                     PrepareRequest(client_, request_, urlBuilder_);
