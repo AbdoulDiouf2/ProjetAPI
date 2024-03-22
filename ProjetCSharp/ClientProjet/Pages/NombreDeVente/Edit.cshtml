@@ -6,7 +6,26 @@
 }
 
 <h1>Edit</h1>
+<h4>Consoles Disponibles</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nom</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var console in Model.Consoles)
+        {
+            <tr>
+                <td>@console.Id</td>
+                <td>@console.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
 
+<hr />
 <h4>NombreVentes</h4>
 <hr />
 <div class="row">
@@ -29,6 +48,7 @@
                 <input asp-for="NombreVentes.ConsId" class="form-control" />
                 <span asp-validation-for="NombreVentes.ConsId" class="text-danger"></span>
             </div>
+            <br />
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>

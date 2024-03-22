@@ -19,8 +19,17 @@ namespace ClientProjet.Pages.NombreDeVente
             _client = client;
         }
 
+        public SelectList ConsoleList { get; set; }
+        /*
         public IActionResult OnGet()
         {
+            return Page();
+        }*/
+
+        public async Task<IActionResult> OnGetAsync()
+        {
+            var consoles = await _client.ConsolesAllAsync();
+            ConsoleList = new SelectList(consoles, "Id", "Name");
             return Page();
         }
 

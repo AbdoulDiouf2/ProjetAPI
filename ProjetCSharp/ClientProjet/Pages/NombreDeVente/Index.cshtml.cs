@@ -19,10 +19,14 @@ namespace ClientProjet.Pages.NombreDeVente
         }
 
         public IList<NombreVentes> NombreVentes { get;set; } = default!;
+        public Dictionary<int, string> ConsoleNames { get; set; } = new Dictionary<int, string>();
 
         public async Task OnGetAsync()
         {
             NombreVentes = (await _client.NombreVentesAllAsync()).ToList();
+
+            var consoles = await _client.ConsolesAllAsync();
+            ConsoleNames = consoles.ToDictionary(c => c.Id, c => c.Name);
         }
 
     }

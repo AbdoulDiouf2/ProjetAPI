@@ -23,12 +23,17 @@ namespace ClientProjet.Pages.NombreDeVente
         [BindProperty]
         public NombreVentes NombreVentes { get; set; } = default!;
 
+        public List<Consoles> Consoles { get; set; } = new List<Consoles>();
+
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
+
+            var consoles = await _client.ConsolesAllAsync();
+            Consoles = consoles.ToList();
 
             var nombreventes = await _client.NombreVentesGETAsync(id.Value);
             if (nombreventes == null)

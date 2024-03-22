@@ -23,11 +23,21 @@
                 <input asp-for="NombreVentes.Annee" class="form-control" />
                 <span asp-validation-for="NombreVentes.Annee" class="text-danger"></span>
             </div>
+            <!--
             <div class="form-group">
                 <label asp-for="NombreVentes.ConsId" class="control-label"></label>
                 <input asp-for="NombreVentes.ConsId" class="form-control" />
                 <span asp-validation-for="NombreVentes.ConsId" class="text-danger"></span>
             </div>
+            -->
+            <div class="form-group">
+                <label asp-for="NombreVentes.ConsId" class="control-label"></label>
+                <select asp-for="NombreVentes.ConsId" class="form-control" asp-items="@Model.ConsoleList">
+                    <option value="">Choisissez une console</option>
+                </select>
+                <span asp-validation-for="NombreVentes.ConsId" class="text-danger"></span>
+            </div>
+            <br/>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
