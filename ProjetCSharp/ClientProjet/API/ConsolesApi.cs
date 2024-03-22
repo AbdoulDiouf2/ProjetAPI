@@ -128,7 +128,9 @@ namespace ClientProjet.API
     public partial class ConsolesClient : IConsolesClient
     {
         #pragma warning disable 8618
-        private string _baseUrl= "http://localhost:5255";
+        //private string _baseUrl= "http://localhost:5255";
+        private string _baseUrl= "https://projetcsharphome.azurewebsites.net";
+
         #pragma warning restore 8618
 
         private System.Net.Http.HttpClient _httpClient;
