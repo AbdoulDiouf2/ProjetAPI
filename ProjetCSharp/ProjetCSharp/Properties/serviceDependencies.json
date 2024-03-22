@@ -1,9 +1,5 @@
 {
   "dependencies": {
-    "mssql1": {
-      "type": "mssql",
-      "connectionId": "ConnectionStrings:ProjetCSharpContext"
-    },
     "mssql2": {
       "type": "mssql",
       "connectionId": "ConnectionStrings:DefaultConnection"
@@ -12,12 +8,16 @@
       "type": "mssql",
       "connectionId": "ConnectionStrings:ProjetCSharpContext1"
     },
-    "apis1": {
-      "type": "apis"
-    },
     "mssql4": {
       "type": "mssql",
       "connectionId": "ConnectionStrings:ProjetCSharpContext2"
+    },
+    "apis1": {
+      "type": "apis"
+    },
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:ProjetCSharpContext"
     }
   }
 }
